@@ -1,0 +1,27 @@
+name: Build and deploy GitHub page
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_docs:
+    runs-on: ubuntu-latest
+    name: Publish built site to gh-pages
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3.3.0
+        with:
+          node-version: '16'
+      - name: Install Antora
+        run: npm i antora
+      - name: Generate Site
+        run: npx antora antora-playbook.yml
+      - name: Publish to Github Pages
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/site

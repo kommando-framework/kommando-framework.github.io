@@ -1,0 +1,9 @@
+site:
+  title: Kommando Docs
+  url: https://kommando-framework.github.io/
+  start_page: kommando::index.adoc
+
+content:
+  sources:
+    - url: .
+      branches: HEAD

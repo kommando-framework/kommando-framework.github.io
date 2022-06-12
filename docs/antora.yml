@@ -1,0 +1,10 @@
+name: kommando
+title: Kommando
+version: 0.0.16
+
+nav:
+  - modules/ROOT/index.adoc
+
+asciidoc:
+  attributes:
+    kommando_version: 0.0.16
