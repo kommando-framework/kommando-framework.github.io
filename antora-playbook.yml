@@ -7,3 +7,4 @@ content:
   sources:
     - url: .
       branches: HEAD
+      start_path: docs
